@@ -46,5 +46,7 @@ public class VerzeichnisWaechter implements Runnable {
 				Thread.sleep(this.interval);
 			} catch(InterruptedException ex) {}
 		}
+
+		this.aenderungsliste.sendUpdate("Beende Überwachung von " + f.getAbsolutePath());
     }
 }

@@ -8,9 +8,9 @@ public class VerzeichnisCheck {
 		CountDownLatch latch = new CountDownLatch(3);
 		Aenderungsliste aenderungsliste = new Aenderungsliste();
 
-		VerzeichnisWaechter w1 = new VerzeichnisWaechter("/Users/asuender/Downloads", 1000, aenderungsliste, latch);
-		VerzeichnisWaechter w2 = new VerzeichnisWaechter("/Users/asuender/Documents", 1000, aenderungsliste, latch);
-		VerzeichnisWaechter w3 = new VerzeichnisWaechter("/Users/asuender/Desktop", 1000, aenderungsliste, latch);
+		VerzeichnisWaechter w1 = new VerzeichnisWaechter("C:\\Users\\andis\\Documents", 1000, aenderungsliste, latch);
+		VerzeichnisWaechter w2 = new VerzeichnisWaechter("C:\\Users\\andis\\Desktop", 1000, aenderungsliste, latch);
+		VerzeichnisWaechter w3 = new VerzeichnisWaechter("C:\\Users\\andis\\Downloads", 1000, aenderungsliste, latch);
 		Aenderungsdrucker drucker = new Aenderungsdrucker(aenderungsliste, latch);
 
 		Thread t1 = new Thread(w1);
@@ -28,5 +28,4 @@ public class VerzeichnisCheck {
 		w3.setRunning(false);
 		drucker.setRunning(false);
 	}
-
 }

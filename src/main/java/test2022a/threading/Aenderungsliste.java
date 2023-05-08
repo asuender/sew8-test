@@ -17,7 +17,7 @@ public class Aenderungsliste {
     }
 
     public String getUpdate() {
-        String update = "";
+        String update = null;
 
         try {
             update = this.messages.take();
