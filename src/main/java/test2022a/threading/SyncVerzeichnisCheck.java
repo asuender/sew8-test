@@ -3,10 +3,10 @@ package test2022a.threading;
 import java.io.IOException;
 import java.util.concurrent.CountDownLatch;
 
-public class VerzeichnisCheck {
-	public static void main(String[] args) throws IOException {
-		CountDownLatch latch = new CountDownLatch(3);
-		Aenderungsliste aenderungsliste = new Aenderungsliste();
+public class SyncVerzeichnisCheck {
+    public static void main(String[] args) throws IOException {
+        CountDownLatch latch = new CountDownLatch(3);
+		SyncAenderungsliste aenderungsliste = new SyncAenderungsliste();
 
 		VerzeichnisWaechter w1 = new VerzeichnisWaechter("/Users/asuender/Documents", 1000, aenderungsliste, latch);
 		VerzeichnisWaechter w2 = new VerzeichnisWaechter("/Users/asuender/Desktop", 1000, aenderungsliste, latch);
@@ -27,5 +27,5 @@ public class VerzeichnisCheck {
 		w2.setRunning(false);
 		w3.setRunning(false);
 		drucker.setRunning(false);
-	}
+    }
 }
