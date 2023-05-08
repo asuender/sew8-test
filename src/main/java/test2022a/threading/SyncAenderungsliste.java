@@ -1,7 +1,5 @@
 package test2022a.threading;
 
-import java.util.LinkedList;
-
 public class SyncAenderungsliste extends Aenderungsliste {
     private String[] messages;
     private int pointer;
